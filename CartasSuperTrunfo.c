@@ -33,25 +33,28 @@ int main() {
     printf("Bem vindos ao Super Trunfo Cidades.\n");
     printf("Siga as instruções abaixo para cadastrar as cidades.\n\n");
 
-    printf("Cadastro da primeira cidade.\n\n");
 
-    printf("Informe o estado da primeira carta(letras de 'A' a 'H'): ");
-    scanf(" %c", &estado_1);
+    /* CADASTRO DA PRIMEIRA CIDADE */
+    printf("Cadastro da primeira cidade\n");
+    printf("-------- -- -------- -------\n\n");
+
+    printf("Informe o estado(letras de 'A' a 'H'): ");
+    scanf(" %c", &estado_1); // o espaço antes do %c impede que ele pegue um \n residual
     
-    printf("Informe o código da carta(estado + número de 01 a 04): ");
-    scanf("%3s", codCarta_1);
+    printf("Informe o código(estado + número de 01 a 04): ");
+    scanf("%3s", codCarta_1); // %3s é para impedir que mais de 3 caracteres sejam lidos
     
-    getchar();
+    getchar(); // limpar o buffer do \n na tentativa de evitar com que o programa pule perguntas
 
     printf("Informe o nome da cidade: ");
     fgets(cidade_1, 50, stdin);
 
-    cidade_1[strcspn(cidade_1, "\n")] = 0;
+    cidade_1[strcspn(cidade_1, "\n")] = 0; // remove o \n que o fgets pega
 
-    printf("Informe o número de habitantes da cidade: ");
+    printf("Informe o número de habitantes: ");
     scanf("%d", &populacao_1);
 
-    printf("Informe a área da cidade em km²: ");
+    printf("Informe a área(em km²): ");
     scanf("%f", &area_1);
 
     printf("Informe o valor do PIB: ");
@@ -60,27 +63,29 @@ int main() {
     printf("Informe a quantidade de pontos turísticos da cidade: ");
     scanf("%d", &qtdPontosTuristicos_1);
 
-    getchar();
+    getchar(); // limpar o buffer do \n na tentativa de evitar com que o programa pule perguntas
 
-    printf("\n\nCadastro da segunda cidade.\n\n");
+    /* CADASTRO DA SEGUNDA CIDADE */    
+    printf("\n\nCadastro da segunda cidade.\n");
+    printf("-------- -- ------- -------\n\n");
 
-    printf("Informe o estado da primeira carta(letras de 'A' a 'H'): ");
-    scanf(" %c", &estado_2);
+    printf("Informe o estado(letras de 'A' a 'H'): ");
+    scanf(" %c", &estado_2); // o espaço antes do %c impede que ele pegue um \n residual
     
-    printf("Informe o código da carta(estado + número de 01 a 04 - %c01): ", estado_2);
-    scanf("%3s", codCarta_2);
+    printf("Informe o código(estado + número de 01 a 04): ");
+    scanf("%3s", codCarta_2); // %3s é para impedir que mais de 3 caracteres sejam lidos
 
     getchar();
 
     printf("Informe o nome da cidade: ");
     fgets(cidade_2, 50, stdin);
     
-    cidade_2[strcspn(cidade_2, "\n")] = 0;
+    cidade_2[strcspn(cidade_2, "\n")] = 0; // remove o \n que o fgets pega
 
-    printf("Informe o número de habitantes da cidade: ");
+    printf("Informe o número de habitantes: ");
     scanf("%d", &populacao_2);
 
-    printf("Informe a área da cidade em km²: ");
+    printf("Informe a área(em km²): ");
     scanf("%f", &area_2);
 
     printf("Informe o valor do PIB: ");
@@ -90,11 +95,32 @@ int main() {
     scanf("%d", &qtdPontosTuristicos_2);
 
     getchar();
-
     
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+
+    /* DADOS PRIMEIRA CIADADE */
+    printf("\n\nCarta 1\n");
+    printf("----- -\n");
+    printf("Estado: %c\n", estado_1);
+    printf("Código: %s\n", codCarta_1);
+    printf("Nome da cidade: %s\n", cidade_1);
+    printf("População: %d\n", populacao_1);
+    printf("Área (em km²): %.2f\n", area_1);
+    printf("PIB: %.2f\n", pib_1);
+    printf("Número de pontos turísticos: %d\n", qtdPontosTuristicos_1);
+
+    /* DADOS SEGUNDA CIADADE */
+    printf("\n\nCarta 2\n");
+    printf("----- -\n");
+    printf("Estado: %c\n", estado_2);
+    printf("Código: %s\n", codCarta_2);
+    printf("Nome da cidade: %s\n", cidade_2);
+    printf("População: %d\n", populacao_2);
+    printf("Área (em km²): %.2f\n", area_2);
+    printf("PIB: %.2f\n", pib_2);
+    printf("Número de pontos turísticos: %d\n", qtdPontosTuristicos_2);
 
     return 0;
 }
